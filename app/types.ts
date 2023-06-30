@@ -8,7 +8,7 @@ export interface Grade {
 
 
 export interface YearlyRequirements {
-    "Årstall": number;
+    "Årstall": string;
     "Poenggrense primærkvote": string;
     "Poenggrense ordinær kvote": string;
     "Poengkrav": string;

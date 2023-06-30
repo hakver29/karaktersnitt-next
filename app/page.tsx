@@ -50,6 +50,7 @@ const HomePage = () => {
                     <th>2022</th>
                     <th>2021</th>
                     <th>2020</th>
+                    <th>2019</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -57,10 +58,11 @@ const HomePage = () => {
                     <tr key={uuidv4()}>
                         <td>{row.Studieprogramnavn} {row.Semesternavn === 'Vår' ? '(Vår)' : '(Høst)'}</td>
                         <td>{row.Institusjonsnavn}</td>
-                        <td>{row.Krav[0].Poengkrav}</td>
-                        <td>{row.Krav[1].Poengkrav}</td>
-                        <td>{row.Krav[2].Poengkrav}</td>
-                        <td>{row.Krav[3].Poengkrav}</td>
+                        <td>{row.Krav.find(k => k["Årstall"] === "2023")?.Poengkrav ?? '-/-'}</td>
+                        <td>{row.Krav.find(k => k["Årstall"] === "2022")?.Poengkrav ?? '-/-'}</td>
+                        <td>{row.Krav.find(k => k["Årstall"] === "2021")?.Poengkrav ?? '-/-'}</td>
+                        <td>{row.Krav.find(k => k["Årstall"] === "2020")?.Poengkrav ?? '-/-'}</td>
+                        <td>{row.Krav.find(k => k["Årstall"] === "2019")?.Poengkrav ?? '-/-'}</td>
                     </tr>
                 ))}
                 </tbody>
